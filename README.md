@@ -46,7 +46,7 @@ A single week produces **two pages** (a portrait summary and a landscape tracker
 
 ## Status
 
-Tier 0 is fully ported as the reference implementation. The Markdown -> PDF render pipeline is **not yet built** (deferred by decision; see `CHANGES.md`). Read `CHANGES.md` first when picking this up.
+Tier 0 (reference) and Tier 1 (The Standard Home) are fully authored against the shared structure. The Markdown -> PDF render pipeline is **not yet built** (deferred by decision; see `CHANGES.md`). Read `CHANGES.md` first when picking this up.
 
 ## Setup
 
