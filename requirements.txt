@@ -1,0 +1,11 @@
+# The Stead - content tooling
+# The markdown -> PDF render pipeline is deliberately deferred (see CHANGES.md).
+# These are the lightweight deps for reading/validating the content + data sources.
+
+PyYAML>=6.0          # progression data
+python-frontmatter>=1.1  # parse front-matter + body from content markdown
+
+# Reserved for the future render pipeline (uncomment when we build build.py):
+# Jinja2>=3.1
+# weasyprint>=62
+# Markdown>=3.6
