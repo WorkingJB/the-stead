@@ -4,6 +4,43 @@ Session log for The Stead. Newest session on top. Read the most recent entry fir
 
 ---
 
+## Session 2 (2026-05-29) · Tier 1 (The Standard Home) port
+
+### What this session did
+
+Authored Tier 1 in full, mirroring the Tier 0 page set and contract exactly. Tier 1 equipment: doorway pullup bar, one heavy kettlebell (16-20 kg Path A, 24 kg Path B), a weight vest (20-30 lb), real training shoes. Strength becomes kettlebell-based; the doorway bar closes Tier 0's pulling gap; the Day 5 keystone becomes a loaded ruck.
+
+### Decisions made (with the user)
+
+- **Tier nomenclature corrected.** Resolved the Session 1 open question: the real tier list is Tier 0-3 (home path) plus C1/C2 (commercial). The Tier 1 glossary uses this, and the Tier 0 glossary entry was corrected to match (it previously said "up to Tier 5 / C1-C4" as a faithful but inconsistent port).
+- **Scope: full Tier 1 port** (all 33 pages + YAML), not a partial/outline pass.
+
+### Files created
+
+- `content/tier-1/` : 33 Markdown files (cover, 6 front matter, 6 movement library, program overview + 3 block intros, 12 weeks, 4 back matter). Same template distribution as Tier 0, same page numbers 1-45.
+- `data/progressions/tier-1.yaml` : 12 weeks, 5 days each, Path A + Path B, identical schema to tier-0.yaml.
+- Edited: `content/tier-0/back-matter/03-glossary.md` (tier nomenclature fix), `README.md` (status).
+
+### Tier 1 programming design
+
+- Strength A (Push + Squat): KB goblet squat -> front-rack squat, KB overhead/push press, pushup -> vested pushup, plank.
+- Strength B (Pull + Hinge): pullup (negatives/band -> strict -> weighted vest), KB swing (two-hand -> single-arm), KB single-leg RDL, KB bent-over row, Turkish get-up (Block 3, Path B), side plank.
+- Same block shape as Tier 0: Block 1 all Zone 2, Block 2 adds tempo Day 4, Block 3 adds intervals Day 4. Day 5 is the loaded ruck (10-35 lb across the program). Deloads weeks 4/8/12.
+- Day-5 title changed from "Long Zone 2" to "Long Ruck"; kept `kind: long`.
+
+### Validation run (all passed)
+
+- 33 content Markdown files, every one parses with a `template` field; template counts match Tier 0.
+- Page numbers 1-45 contiguous, no duplicates (incl. week summary/tracker pairs).
+- `tier-1.yaml`: 12 weeks, 5 days each, both Paths populated, all per-day fields present.
+- Em-dash scan: zero em dashes across all new/edited files. Zero literal "x" between digits (all `×`).
+
+### Environment note
+
+- `python-frontmatter` is not installed in this env and pip had no network to add it; validation used a small inline YAML-frontmatter parser instead (PyYAML is available). `requirements.txt` still lists the intended deps.
+
+---
+
 ## Session 1 (2026-05-29) · Repo setup + Tier 0 port
 
 ### What this session did
@@ -60,10 +97,9 @@ Set up the repo from scratch and ported the Tier 0 reference PDF (`The Foundatio
 
 ## NEXT SESSION STARTS HERE
 
-Tier 0 is fully ported and validated. The natural next step is **either** (a) build the markdown + YAML -> PDF render pipeline and confirm it reproduces the reference visually, **or** (b) start **Tier 1 (The Standard Home)** content against this same structure.
+Tier 0 and Tier 1 are both fully authored and validated against the shared structure. The natural next steps, in priority order to discuss with the user:
 
-The user's stated plan: "We'll do Tier 1 fresh after that." So unless the user wants the render pipeline first, begin Tier 1 by copying the Tier 0 structure:
-1. `content/tier-1/` mirroring the Tier 0 page set; rewrite prose for KB-based strength + real rucking (per the project brief), keeping the voice in `shared/voice-guide.md`.
-2. `data/progressions/tier-1.yaml` with the same schema as `tier-0.yaml`.
-3. Reuse `shared/` as-is (voice, style, tokens) so the series stays coherent.
-4. Resolve the tier-nomenclature open question above first.
+1. **Tier 2 (The Expanded Home)** content, against the same structure: adds a second kettlebell (double cleans / front squats / presses), gymnastics rings, sandbag, jump rope, plyo box. Mirror the Tier 1 approach: `content/tier-2/` (33 pages, same templates/page numbers) + `data/progressions/tier-2.yaml` (same schema). Reuse `shared/` as-is.
+2. **OR** build the markdown + YAML -> PDF render pipeline (deferred since Session 1) and confirm it reproduces the Tier 0 reference visually before authoring more tiers.
+
+Tier 1 design choices worth carrying forward to Tier 2 (see Session 2 entry for detail): Day-5 keystone is the loaded ruck (`kind: long`, title "Long Ruck"); pull day now centers on the pullup; strength is bell-based. No open content questions outstanding.

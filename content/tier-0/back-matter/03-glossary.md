@@ -27,7 +27,7 @@ entries:
   - term: "Keystone session"
     definition: "The long Day 5 walk. The single most important session of the week. If you do only one session this week, do this one."
   - term: "Tier 0 / Tier 1 / etc."
-    definition: "The Stead equipment tier system. Tier 0 is bodyweight only. Each tier above adds equipment and capability, up to Tier 5 (full home garage). Commercial-gym tiers are labeled C1 through C4."
+    definition: "The Stead equipment tier system. The home path runs Tier 0 (bodyweight only) through Tier 3 (full home garage), each tier adding equipment and capability. The commercial-gym alternatives are labeled C1 (basic big-box gym) and C2 (serious strength gym or CrossFit affiliate)."
 ---
 
 The glossary entries are authored in front-matter (`entries`) so they render as a consistent definition list and can be reused or extended across tiers.
