@@ -4,6 +4,41 @@ Session log for The Stead. Newest session on top. Read the most recent entry fir
 
 ---
 
+## Session 4 (2026-05-30) · Tier 3 (The Real Garage) authored; commercial tiers next
+
+### What this session did
+
+Authored Tier 3 in full, mirroring the Tier 0-2 page set and contract exactly (33 Markdown pages, page numbers 1-45, same template distribution + `data/progressions/tier-3.yaml` on the identical schema). Tier 3 equipment: a barbell and rack, a bench, a full range of dumbbells and kettlebells, and a cardio machine (rower/bike/treadmill), on top of the carried-forward kit. This completes the home path (Tier 0-3). The user's directive was to finish the home gym content, then move on to the commercial tiers (C1, C2).
+
+### Decisions made (with the user)
+
+- **Finish the home path (Tier 3), then build the commercial tiers (C1, C2).** Tier 3 framed as the top of the home path with no Tier 4; "what's next" points at the commercial tiers as a parallel room, not a higher rung, plus the selection-or-eighty framing.
+- **Barbell enters as the headline tool.** Squat -> back squat, hinge -> deadlift + RDL, push -> barbell overhead press + bench, pull -> weighted pullup + barbell row. Strength moves to lower-rep, RPE-driven barbell loading; the cardio machine enables precise Zone 2 and clean intervals.
+- **Ruck stays the keystone across all tiers** (series throughline), now selection-grade: peaks at Path B 45 lb / 150 min in week 11.
+
+### Files created
+
+- `content/tier-3/` : 33 Markdown files (cover, 6 front matter, 6 movement library, program overview + 3 block intros, 12 weeks, 4 back matter). Same template counts and page numbers as Tier 0-2.
+- `data/progressions/tier-3.yaml` : 12 weeks, 5 days each, Path A + Path B, identical schema.
+- Edited: `README.md` (status now covers the full home path; Tier 3 row notes the barbell).
+
+### Tier 3 programming design
+
+- **Push (Strength A):** barbell overhead press (A may sub dumbbell press) + bench press (A starts on dumbbell bench).
+- **Squat (Strength A):** barbell back squat as the primary lift; Bulgarian split squat as the unilateral library movement.
+- **Pull (Strength B):** weighted pullup + barbell row (enters Block 2, as the second horizontal pull always has).
+- **Hinge (Strength B):** barbell deadlift (primary) + Romanian deadlift; the KB swing carries forward as the ballistic accessory in Block 1.
+- **Core:** loaded carry (farmer's / suitcase) + ab wheel & hanging leg raise.
+- **Conditioning:** same block shape (Block 1 all Zone 2; Block 2 adds tempo on the machine; Block 3 adds true intervals, 4x4 rower / air-bike / hills). Rep scheme drops across blocks (8s -> 5s/6s -> heavy 3s/5s), RPE-driven, loads expressed relative to bodyweight in the assessment rather than absolute lb. Deloads weeks 4/8/12.
+- Assessment uses bodyweight-multiple strength standards (back squat 5-rep, deadlift 3-rep, press 5-rep, weighted pullup) plus a 2k row, the Zone 2 ruck, and a mile run.
+
+### Validation run (all passed)
+
+- All three home tiers re-validated together via the (now tier-3-aware) script: 33 content files each, template counts identical across tiers, page numbers 1-45 contiguous with no duplicates, every `tier-N.yaml` 12 weeks x 5 days x both paths fully populated.
+- Em-dash scan: zero across all Tier 3 files. The only literal "x" between digits is the named "4x4" interval protocol, consistent with Tiers 1-2 (a proper-noun protocol name, not a sets x reps prescription).
+
+---
+
 ## Session 3 (2026-05-30) · Tier 2 (The Expanded Home) authored
 
 ### What this session did

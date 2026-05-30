@@ -11,7 +11,7 @@ Each tier is a separate ~45-page program with the same structure and voice.
 | Tier 0 | The Foundation | Bodyweight only (built, reference implementation) |
 | Tier 1 | Standard Home | Doorway pullup bar, one heavy KB, weight vest, real shoes |
 | Tier 2 | Expanded Home | Second KB, rings, sandbag, jump rope, plyo box |
-| Tier 3 | Real Garage | Cardio machine, dumbbell range, full KB progression |
+| Tier 3 | Real Garage | Barbell + rack, cardio machine, dumbbell range, full KB progression |
 | C1 | Commercial (basic) | Basic big-box gym |
 | C2 | Commercial (serious) | Serious strength gym or CrossFit affiliate |
 
@@ -46,7 +46,7 @@ A single week produces **two pages** (a portrait summary and a landscape tracker
 
 ## Status
 
-Tier 0 (reference), Tier 1 (The Standard Home), and Tier 2 (The Expanded Home) are fully authored against the shared structure. The Markdown -> PDF render pipeline is **not yet built** (deferred by decision; see `CHANGES.md`). Read `CHANGES.md` first when picking this up.
+The full home path is authored: Tier 0 (reference), Tier 1 (The Standard Home), Tier 2 (The Expanded Home), and Tier 3 (The Real Garage), all against the shared structure. The commercial tiers (C1, C2) are next. The Markdown -> PDF render pipeline is **not yet built** (deferred by decision; see `CHANGES.md`). Read `CHANGES.md` first when picking this up.
 
 ## Setup
 
