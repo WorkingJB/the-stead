@@ -4,6 +4,36 @@ Session log for The Stead. Newest session on top. Read the most recent entry fir
 
 ---
 
+## Session 5 (2026-05-30) · Commercial tiers C1 and C2 authored; the series is complete
+
+### What this session did
+
+Authored both commercial tiers, C1 (The Membership) and C2 (The Strength Hall), each in full and against the same contract as the home path (33 Markdown pages, page numbers 1-45, identical template distribution + a progression YAML on the identical schema). With these, all six Stead programs (Tier 0-3, C1, C2) are authored. Continuation of Session 4, where Tier 3 finished the home path; the user's directive was to finish the home gym content, then move to the commercial tiers.
+
+### New file locations (note the naming)
+
+- Commercial tiers use `content/c1/`, `content/c2/` and `data/progressions/c1.yaml`, `c2.yaml` (not `tier-N`). Front-matter `tier:` is the string `C1` / `C2`; covers use `issue: "no. C1"` and eyebrow `TWELVE-WEEK PROGRAM · C1`.
+- Edited `README.md` (status: all six programs authored; tier table names C1/C2; repo-layout note).
+
+### C1 (The Membership) design
+
+- A basic big-box gym. Strength is machine, dumbbell, and cable based: leg press, machine/dumbbell presses, lat pulldown and the assisted pull-up station, seated cable/machine row, dumbbell RDL and hip thrust, cable Pallof core. Walking lunge and goblet squat are the free-weight squat library card.
+- Path A leans on the machines and the assisted pull-up (getting a first unassisted pull-up is an explicit Path A goal); Path B leans on free weights and strict/weighted pull-ups.
+- Day 5 ruck done outdoors or on a steep treadmill incline. Loads/durations sit near Tier 1's level (entry commercial population). Honest gap: heavy free-barbell squat/deadlift; the signal to move to C2 or the home garage.
+
+### C2 (The Strength Hall) design
+
+- A serious strength gym or CrossFit affiliate, the richest room: full barbells and platforms, a rig, GHD and sleds, rowers and air bikes. Strength is barbell + olympic: back/front squat, strict press and push press, bench and weighted dip, weighted pull-up, deadlift and the power clean (explosive hinge, the one thing the home tiers could not build), barbell/Pendlay row, GHD and loaded-carry/sled core.
+- Voice beat unique to C2: a gentle, repeated critique of affiliate culture's inverted 80/20 and allergy to deloads. The Zone 2 and how-it-works pages lean into "your easy days will feel like quitting; guard them." Day 4 in Block 3 is where the program lets the room's intensity off the leash (intervals, sled, measured metcons), now on a real aerobic base.
+- Peer of Tier 3 at the top of the ladder, with olympic lifting + sleds + GHD + community as the extras. Ruck is selection-grade (peaks Path B 45 lb / 155 min wk11). What's-next: no higher tier; specialize toward a goal or maintain for life.
+
+### Validation run (all passed)
+
+- All six tiers validated together with a new /tmp/validate_all.py (covers tier-0..3, c1, c2): 33 content files each, template counts identical across all six, page numbers 1-45 contiguous with no duplicates, every progression YAML 12 weeks x 5 days x both paths fully populated.
+- Em-dash scan: zero across all C1 and C2 files. Literal "x" between digits: zero (C1/C2 avoid even the "4x4" protocol name; C2 uses air-bike/rower interval phrasing instead).
+
+---
+
 ## Session 4 (2026-05-30) · Tier 3 (The Real Garage) authored; commercial tiers next
 
 ### What this session did
@@ -172,10 +202,10 @@ Set up the repo from scratch and ported the Tier 0 reference PDF (`The Foundatio
 
 ## NEXT SESSION STARTS HERE
 
-Tier 0, Tier 1, and Tier 2 are all fully authored and validated against the shared structure. The natural next steps, in priority order to discuss with the user:
+All six programs are authored and validated against the shared structure: the home path (Tier 0-3) and the commercial tiers (C1, C2). The content phase of the project is, in effect, complete. The natural next steps, to discuss with the user:
 
-1. **Tier 3 (The Real Garage)** content, against the same structure: adds a cardio machine (rower/bike/treadmill), a full dumbbell range, a complete kettlebell progression, and a barbell. Mirror the Tier 1/Tier 2 approach: `content/tier-3/` (33 pages, same templates/page numbers) + `data/progressions/tier-3.yaml` (same schema). Reuse `shared/` as-is. This is where the squat/press finally move to the barbell and a dedicated cardio machine enables precise Zone 2 / interval prescriptions.
-2. **OR** the commercial tiers C1 (basic big-box gym) and C2 (serious strength gym / CrossFit affiliate), which walk the same twelve-week arc on commercial equipment.
-3. **OR** build the markdown + YAML -> PDF render pipeline (deferred since Session 1) and confirm it reproduces the Tier 0 reference visually before authoring more tiers.
+1. **Build the Markdown + YAML -> PDF render pipeline** (deferred since Session 1). This is now the highest-leverage remaining work: `build/` is empty, and the whole point of the structured source is to render it. The contract is fully specified across six reference programs and in the Session 1 content-model notes; `shared/design-tokens.md` holds the visual system. Build it so it reproduces the Tier 0 reference PDF visually, then batch-render all six tiers. `requirements.txt` already lists the render deps (Jinja2, WeasyPrint, Markdown), currently commented out.
+2. **OR** an editorial pass across all six programs for cross-tier consistency (shared phrasing, progression sanity, assessment-standard laddering between tiers), now that they can be read side by side.
+3. **OR** extend the content: a real movement-photo/illustration plan, the other three Stead pillars (civic, skills, food), or per-tier printable quick-reference cards.
 
-Tier 2 design choices worth carrying forward (see Session 3 entry for detail): Day-5 keystone is the loaded ruck (`kind: long`, title "Long Ruck"); strength is now double-bell / ring / sandbag based; ring row enters Block 2 and weighted work + get-ups define Block 3; jump rope and box jumps live on the Day 4 conditioning. Tier 2 assessment standards are the entry bar for Tier 3. No open content questions outstanding.
+Validation tooling: `/tmp/validate_all.py` checks all six tiers (template counts, contiguous 1-45 page numbers, YAML shape, em-dash and literal-x scans). Re-create it if the container has reset; it is the fastest way to confirm a new or edited program still meets the contract. Commercial tiers live at `content/c1`, `content/c2` and `data/progressions/c1.yaml`, `c2.yaml`, with string `tier: C1` / `C2` in front-matter. No open content questions outstanding.

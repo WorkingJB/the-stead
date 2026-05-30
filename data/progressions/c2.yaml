@@ -1,0 +1,1085 @@
+# The Stead - C2 (The Strength Hall) - weekly prescriptions
+#
+# This is the tabular programming data. Prose (week intros, coaching voice,
+# movement descriptions) lives in content/c2/. Each week here drives TWO
+# rendered pages: the portrait week-summary and the landscape week-tracker.
+#
+# Schema (identical to the tier-N progressions):
+#   weeks[].week              week number 1-12
+#   weeks[].days[].day        day number 1-5 (Day 6 mobility / Day 7 rest are program-wide)
+#   weeks[].days[].title      session title as printed
+#   weeks[].days[].kind       strength | cardio | tempo | intervals | long
+#   weeks[].days[].duration   duration label as printed
+#   weeks[].days[].note       the per-day NOTE line (coaching cue tied to the prescription)
+#   weeks[].days[].prescriptions.A / .B   ordered "movement: sets x reps" lines per Path
+#
+# C2 equipment: a serious strength gym or CrossFit affiliate (full barbells and
+# platforms, racks and a rig, GHD and sleds, rowers and air bikes, complete bell
+# and dumbbell range, rings and dip station). Strength is barbell and olympic
+# based; the Day 5 keystone is a loaded ruck, done outdoors or on a steep incline.
+#
+# Style: colon between movement and prescription; "x" rendered as the multiplication sign.
+# No em dashes anywhere (see shared/style-rules.md).
+
+tier: C2
+title: The Strength Hall
+paths: [A, B]
+
+# Program-wide footer printed on every week-summary page:
+optional_days: "Day 6 · 15-20 min mobility, optional · Day 7 · rest"
+
+blocks:
+  - number: 1
+    name: The Engine
+    weeks: [1, 2, 3, 4]
+  - number: 2
+    name: The Build
+    weeks: [5, 6, 7, 8]
+  - number: 3
+    name: Integration
+    weeks: [9, 10, 11, 12]
+
+weeks:
+  - week: 1
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Groove the lifts under honest weight. Leave 2-3 reps in reserve on every set. Target RPE 6."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 3 × 8"
+            - "Barbell strict press: 3 × 6"
+            - "Bench press: 3 × 8"
+            - "Ab wheel: 3 × 8"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 3 × 6"
+            - "Barbell push press: 3 × 5"
+            - "Weighted dip: 3 × 6"
+            - "Ab wheel: 3 × 10"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "40-45 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2. Yes, it will feel too easy."
+        prescriptions:
+          A:
+            - "40 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "45 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Clean for speed and a fast catch, not for grind. Full range; controlled tempo. Target RPE 6."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 3 × 5"
+            - "Power clean: 4 × 3 (light, technical)"
+            - "Romanian deadlift: 3 × 8"
+            - "GHD back extension: 3 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 3 × 5"
+            - "Power clean: 4 × 3"
+            - "Romanian deadlift: 3 × 8"
+            - "GHD back extension: 3 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "40-45 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "40 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Trust the talk test; hold the watt that holds the zone"
+          B:
+            - "45 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "65-80 MIN"
+        note: "If you only do one session this week, do this one. Do not race it; this is not a metcon."
+        prescriptions:
+          A:
+            - "65 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "80 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 2
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Leave 2-3 reps in reserve on every set. Target RPE 6-7. Stop the set if form breaks."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 3 × 8"
+            - "Barbell strict press: 3 × 6"
+            - "Bench press: 3 × 8"
+            - "Ab wheel: 3 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 4 × 6"
+            - "Barbell push press: 4 × 5"
+            - "Weighted dip: 3 × 8"
+            - "Ab wheel: 3 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "45-50 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "45 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "50 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Clean for speed and a fast catch. Full range; controlled tempo. Target RPE 6-7."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 3 × 5-6"
+            - "Power clean: 4 × 3 (light, technical)"
+            - "Romanian deadlift: 3 × 10"
+            - "GHD back extension: 3 × 12"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 5"
+            - "Power clean: 5 × 2"
+            - "Romanian deadlift: 4 × 8"
+            - "GHD back extension: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "45-50 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "45 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Trust the talk test; hold the watt that holds the zone"
+          B:
+            - "50 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "75-90 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "75 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "90 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 3
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Peak week of the block. Leave 2-3 reps in reserve. Target RPE 7-8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 4 × 6"
+            - "Barbell strict press: 4 × 5"
+            - "Bench press: 4 × 6"
+            - "Ab wheel: 4 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 4 × 5"
+            - "Barbell push press: 4 × 4"
+            - "Weighted dip: 4 × 6"
+            - "Ab wheel: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "50-55 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "50 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "55 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Peak week of the block. Full range; controlled tempo. Target RPE 7-8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 5"
+            - "Power clean: 5 × 2"
+            - "Romanian deadlift: 4 × 8"
+            - "GHD back extension: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 5-6"
+            - "Power clean: 5 × 2"
+            - "Romanian deadlift: 4 × 8"
+            - "GHD back extension: 4 × 15"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "50-55 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "50 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Trust the talk test; hold the watt that holds the zone"
+          B:
+            - "55 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "90-105 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "90 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "105 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 40 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 4
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Deload week. Two sets, easy effort. Move well; do not chase fatigue. Yes, really deload."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 2 × 6"
+            - "Barbell strict press: 2 × 5"
+            - "Bench press: 2 × 6"
+            - "Ab wheel: 2 × 8"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 2 × 5"
+            - "Barbell push press: 2 × 4"
+            - "Weighted dip: 2 × 6"
+            - "Ab wheel: 2 × 10"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "30-35 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "30 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "35 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Deload week. Lower volume; full range of motion the priority."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 2 × 4"
+            - "Power clean: 3 × 2 (light)"
+            - "Romanian deadlift: 2 × 8"
+            - "GHD back extension: 2 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 2 × 4"
+            - "Power clean: 3 × 2"
+            - "Romanian deadlift: 2 × 6"
+            - "GHD back extension: 2 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "30-35 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "30 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Trust the talk test; hold the watt that holds the zone"
+          B:
+            - "35 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "55-65 MIN"
+        note: "Deload ruck. Lighter load and shorter than week 3; same conversational pace."
+        prescriptions:
+          A:
+            - "55 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 20 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "65 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 25 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 5
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "The front squat enters; load climbs, reps drop. Leave 2-3 reps in reserve. Target RPE 7."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell front squat: 3 × 6"
+            - "Barbell strict press: 3 × 5"
+            - "Bench press: 4 × 6"
+            - "Ab wheel: 3 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell front squat: 4 × 5"
+            - "Barbell push press: 4 × 4"
+            - "Weighted dip: 4 × 6"
+            - "Ab wheel: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "45-55 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "45 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "55 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "The deadlift enters heavy; the barbell row joins. Full range; controlled tempo. Target RPE 7."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 5"
+            - "Power clean: 5 × 2"
+            - "Barbell deadlift: 3 × 5"
+            - "Barbell row: 3 × 8"
+            - "GHD sit-up: 3 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 5"
+            - "Power clean: 5 × 2"
+            - "Barbell deadlift: 4 × 5"
+            - "Pendlay row: 4 × 6"
+            - "GHD sit-up: 4 × 10"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "Tempo / Threshold"
+        kind: tempo
+        duration: "25-30 MIN"
+        note: "Tempo work sits at the edge of conversational pace. You can speak in short phrases but not full sentences. Hold it; don't push past it."
+        prescriptions:
+          A:
+            - "25 min on a rower or bike, 5 min easy warmup:"
+            - "Then 2 × 6 min at comfortably hard tempo"
+            - "(2 min easy between segments)"
+            - "5 min easy cooldown"
+          B:
+            - "30 min on a rower or air bike:"
+            - "10 min easy warmup, then 2 × 6 min at comfortably hard tempo"
+            - "(2 min easy between segments)"
+            - "5-10 min easy cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "80-95 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "80 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "95 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 40 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 6
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Leave 2-3 reps in reserve on every set. Target RPE 7-8. Stop the set if form breaks."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell front squat: 4 × 6"
+            - "Barbell strict press: 4 × 5"
+            - "Bench press: 4 × 6"
+            - "Ab wheel: 4 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell front squat: 4 × 5"
+            - "Barbell push press: 4 × 4"
+            - "Weighted dip: 4 × 8"
+            - "Ab wheel: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "50-60 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "50 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "60 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Full range; controlled tempo. Target RPE 7-8. The clean stays fast; the deadlift stays clean."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 5-6"
+            - "Power clean: 5 × 2"
+            - "Barbell deadlift: 4 × 5"
+            - "Barbell row: 4 × 8"
+            - "GHD sit-up: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 6"
+            - "Power clean: 6 × 2"
+            - "Barbell deadlift: 4 × 4"
+            - "Pendlay row: 4 × 6"
+            - "GHD sit-up: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "Tempo / Threshold"
+        kind: tempo
+        duration: "30-35 MIN"
+        note: "Tempo work sits at the edge of conversational pace. You can speak in short phrases but not full sentences. Hold it; don't push past it."
+        prescriptions:
+          A:
+            - "30 min on a rower or bike, 5 min easy warmup:"
+            - "Then 3 × 6 min at comfortably hard tempo"
+            - "(2 min easy between segments)"
+            - "5 min easy cooldown"
+          B:
+            - "35 min on a rower or air bike:"
+            - "10 min easy warmup, then 3 × 6 min at comfortably hard tempo"
+            - "(2 min easy between segments)"
+            - "5-10 min easy cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "95-110 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "95 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "110 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 40 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 7
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Peak week of the block. Leave 2-3 reps in reserve. Target RPE 8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 4 × 5"
+            - "Barbell strict press: 4 × 5"
+            - "Bench press: 4 × 5"
+            - "Ab wheel: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 5 × 3"
+            - "Barbell push press: 4 × 3"
+            - "Weighted dip: 4 × 6"
+            - "Ab wheel: 4 × 15"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "55-65 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "55 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "65 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Peak week of the block. Full range; controlled tempo. Target RPE 8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 6"
+            - "Power clean: 5 × 2"
+            - "Barbell deadlift: 4 × 5"
+            - "Barbell row: 4 × 8"
+            - "GHD sit-up: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 6-8"
+            - "Power clean: 5 × 2 (heavier)"
+            - "Barbell deadlift: 5 × 3"
+            - "Pendlay row: 4 × 6"
+            - "GHD sit-up: 4 × 15"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "Tempo / Threshold"
+        kind: tempo
+        duration: "35-40 MIN"
+        note: "Tempo work sits at the edge of conversational pace. You can speak in short phrases but not full sentences. Hold it; don't push past it."
+        prescriptions:
+          A:
+            - "35 min on a rower or bike, 5 min easy warmup:"
+            - "Then 2 × 10 min at comfortably hard tempo"
+            - "(2 min easy between segments)"
+            - "5 min easy cooldown"
+          B:
+            - "40 min on a rower or air bike:"
+            - "10 min easy warmup, then 2 × 10 min at comfortably hard tempo"
+            - "(2 min easy between segments)"
+            - "5-10 min easy cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "110-125 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "110 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 40 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "125 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 45 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 8
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Deload week. Two-to-three sets, RPE 5. Same patterns, lower load."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 2 × 5"
+            - "Barbell strict press: 2 × 5"
+            - "Bench press: 2 × 5"
+            - "Ab wheel: 2 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 3 × 4"
+            - "Barbell push press: 3 × 3"
+            - "Weighted dip: 3 × 5"
+            - "Ab wheel: 2 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "35-45 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "35 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "45 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Deload. Lower volume; full range of motion the priority."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 2 × 4"
+            - "Power clean: 3 × 2 (light)"
+            - "Barbell deadlift: 2 × 5"
+            - "Barbell row: 2 × 8"
+            - "GHD sit-up: 2 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 3 × 4"
+            - "Power clean: 3 × 2"
+            - "Barbell deadlift: 3 × 4"
+            - "Pendlay row: 3 × 6"
+            - "GHD sit-up: 2 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "Light Tempo (Deload)"
+        kind: tempo
+        duration: "20-25 MIN"
+        note: "Deload tempo. Touch the higher zone briefly; don't dig in."
+        prescriptions:
+          A:
+            - "20 min on a machine: 5 min easy, 5 min brisker, 5 min easy, 5 min brisker"
+            - "Stay below the point of breathlessness throughout"
+          B:
+            - "25 min on a machine: 5 min easy, 10 min comfortably brisk, 10 min easy"
+            - "Keep RPE under 7 the whole session"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "60-75 MIN"
+        note: "Deload ruck. Easy effort. The load stays light."
+        prescriptions:
+          A:
+            - "60 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 25 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "75 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 9
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Heavy and low now. Leave 2-3 reps in reserve. Target RPE 7-8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 4 × 5"
+            - "Barbell strict press: 4 × 5"
+            - "Bench press: 4 × 5"
+            - "Ab wheel: 4 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 5 × 3"
+            - "Barbell push press: 4 × 3"
+            - "Weighted dip: 4 × 5-6"
+            - "Ab wheel: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "50-60 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "50 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "60 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Heavy threes on the pull. Full range; controlled tempo. Target RPE 7-8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 5"
+            - "Power clean: 5 × 2"
+            - "Barbell deadlift: 4 × 5"
+            - "Barbell row: 4 × 8"
+            - "Sled push: 4 × 20 m"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 6"
+            - "Power clean: 6 × 2"
+            - "Barbell deadlift: 4 × 3"
+            - "Pendlay row: 4 × 6"
+            - "Sled push: 5 × 20 m"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "High-Intensity Intervals"
+        kind: intervals
+        duration: "30-40 MIN"
+        note: "This is the only true hard session of the week. RPE 8-9 in the work intervals. Now the base can support it."
+        prescriptions:
+          A:
+            - "5 min easy warmup on a machine"
+            - "Intervals: 4 × 60 sec hard on the air bike or rower"
+            - "(90 sec easy recovery between)"
+            - "5 min easy cooldown"
+          B:
+            - "10 min easy warmup on the air bike or rower"
+            - "Intervals: 4 × 60 sec at 85-90% effort, or 4 rounds of heavy sled push"
+            - "(equal-duration easy recovery between)"
+            - "5-10 min easy cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "90-110 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "95 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "110 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 40 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 10
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Leave 2-3 reps in reserve on every set. Target RPE 8. Stop the set if form breaks."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 4 × 5"
+            - "Barbell strict press: 4 × 4"
+            - "Bench press: 4 × 5"
+            - "Ab wheel: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 4 × 3"
+            - "Barbell push press: 4 × 3"
+            - "Weighted dip: 4 × 6"
+            - "Ab wheel: 4 × 15"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "55-65 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "55 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "65 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "The bar is heavy now. Full range; controlled tempo. Target RPE 8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 5"
+            - "Power clean: 6 × 2"
+            - "Barbell deadlift: 4 × 4"
+            - "Barbell row: 4 × 8"
+            - "Sled push: 5 × 20 m"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 6"
+            - "Power clean: 6 × 2 (heavier)"
+            - "Barbell deadlift: 4 × 3"
+            - "Pendlay row: 4 × 6"
+            - "Sled push: 6 × 20 m"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "High-Intensity Intervals"
+        kind: intervals
+        duration: "30-40 MIN"
+        note: "This is the only true hard session of the week. RPE 8-9 in the work intervals. If you cannot recover between segments, the prior intervals were too hard."
+        prescriptions:
+          A:
+            - "5 min easy warmup on a machine"
+            - "Intervals: 5 × 90 sec hard on the air bike or rower"
+            - "(90 sec easy recovery between)"
+            - "5 min easy cooldown"
+          B:
+            - "10 min easy warmup on the air bike or rower"
+            - "Intervals: 5 × 90 sec at 85-90% effort, or a 12-15 min measured metcon"
+            - "(equal-duration easy recovery between intervals)"
+            - "5-10 min easy cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "110-125 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "110 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 40 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "125 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 45 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 11
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Peak week of the program. Leave 2-3 reps in reserve. Target RPE 8-9."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 4 × 4"
+            - "Barbell strict press: 4 × 4"
+            - "Bench press: 4 × 4"
+            - "Ab wheel: 4 × 12"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 4 × 2-3"
+            - "Barbell push press: 4 × 2-3"
+            - "Weighted dip: 4 × 6-8"
+            - "Ab wheel: 4 × 15"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "60-70 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "60 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "70 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 50 MIN"
+        note: "Peak week of the program. Full range; controlled tempo. Target RPE 8-9."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 6"
+            - "Power clean: 6 × 2"
+            - "Barbell deadlift: 4 × 3"
+            - "Barbell row: 4 × 8-10"
+            - "Sled push: 6 × 20 m"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 4 × 6-8"
+            - "Power clean: 5 × 2 (heavy, fast)"
+            - "Barbell deadlift: 4 × 2-3"
+            - "Pendlay row: 4 × 6-8"
+            - "Sled push: 6 × 25 m"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "High-Intensity Intervals"
+        kind: intervals
+        duration: "35-40 MIN"
+        note: "This is the only true hard session of the week. RPE 8-9 in the work intervals. If you cannot recover between segments, the prior intervals were too hard."
+        prescriptions:
+          A:
+            - "5 min easy warmup on a machine"
+            - "Intervals: 6 × 90 sec hard on the air bike or rower"
+            - "(90 sec easy recovery between)"
+            - "5 min easy cooldown"
+          B:
+            - "10 min easy warmup on the air bike or rower"
+            - "Intervals: 6 × 90 sec at 85-90% effort, or a 15-18 min measured metcon"
+            - "(equal-duration easy recovery between intervals)"
+            - "5-10 min easy cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "135-155 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "135 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 40 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "155 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 45 lb"
+            - "Take it outside the gym. This is the keystone session"
+
+  - week: 12
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Final deload + assessment. Two-to-three sets, RPE 5. See assessment page after week 12."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 2 × 5"
+            - "Barbell strict press: 2 × 5"
+            - "Bench press: 2 × 5"
+            - "Ab wheel: 2 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, mobility, empty-bar work"
+            - "Barbell back squat: 3 × 3"
+            - "Barbell push press: 3 × 3"
+            - "Weighted dip: 3 × 5"
+            - "Ab wheel: 2 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "40-50 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "40 min Zone 2 on a rower, bike, or easy run"
+            - "Conversational pace; nasal breathing the whole session"
+            - "Headphones on; let the class chase the leaderboard without you"
+          B:
+            - "50 min Zone 2 on a rower or bike, or easy run"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Final deload. Easy volume to feel the patterns one more time before testing."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 2 × 4"
+            - "Power clean: 3 × 2 (light)"
+            - "Barbell deadlift: 2 × 4"
+            - "Barbell row: 2 × 8"
+            - "GHD sit-up: 2 × 10"
+            - "Cooldown: 3 min easy bike"
+          B:
+            - "Warmup: 5 min easy row, scapular pulls, empty-bar cleans"
+            - "Weighted pull-up: 3 × 4"
+            - "Power clean: 3 × 2"
+            - "Barbell deadlift: 3 × 3"
+            - "Pendlay row: 3 × 6"
+            - "GHD sit-up: 2 × 12"
+            - "Cooldown: 3 min easy bike"
+      - day: 4
+        title: "Easy Intervals (Deload)"
+        kind: intervals
+        duration: "25 MIN"
+        note: "Deload week of the program. After this comes assessment and the choice of what's next."
+        prescriptions:
+          A:
+            - "20 min on a machine with 4 × 30 sec brisker pace"
+            - "(2 min easy between)"
+          B:
+            - "25 min on a machine with 4 × 45 sec at 80% effort"
+            - "(2 min easy between)"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "75-90 MIN"
+        note: "Final long session of the program. Choose a route you love, outside the gym."
+        prescriptions:
+          A:
+            - "75 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Take it outside the gym. This is the keystone session"
+          B:
+            - "90 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Take it outside the gym. This is the keystone session"
