@@ -53,15 +53,24 @@ Update the checkboxes in the same PR that lands the work.
   Unlinked exercises still render from `rawText`. c1/c2 link rates are low (gym
   equipment names); revisit if cross-links matter for those tiers.
 
-## Phase 3 — Logging + PWA ⬜ (MVP ship point)
+## Phase 3 — Logging + PWA 🟡 (MVP ship point)
 
-- [ ] `/onboarding`: fitness level (Path A/B) → equipment tier → start date → `enrollments` row
-- [ ] `/today`: enrolled user's session, derived from `enrollments.current_week/day`
-- [ ] `/log/[sessionId]`: gym screen — steppers, RPE, sticky save; writes `set_logs`
+**Increment A — core online flow ✅ (this session)**
+- [x] Typed Supabase `Database` bindings generated from the live schema; wired into both clients
+- [x] `/onboarding`: Path A/B → equipment tier (6 cards) → start date → writes `profiles` + `enrollments`
+- [x] `/today`: enrolled session derived from `enrollments.current_week/day`; start/resume `workout_sessions`
+- [x] `/log/[sessionId]`: gym screen (per-set reps/weight/duration, RPE, notes); writes `set_logs`, advances enrollment pointer (or marks `complete`)
+- [x] FK id construction verified against the seeded cloud rows; e2e guards on the new protected routes
+
+**Increment B — offline + PWA ⬜ (next)**
 - [ ] Dexie offline store + ULID-keyed sync queue (last-write-wins)
 - [ ] Serwist service worker: precache shell + current program (week ±1) + movements
 - [ ] Install prompt on `/about` after first logged session
 - [ ] Apply `pgsodium` note encryption + nonce-based CSP (carried from Phase 2)
+
+> Note: the authenticated write path's live round-trip (sign in → onboard → log →
+> rows in Supabase) is verified on a real device per the cloud-only constraint —
+> rides along with issue #5.
 
 ## Phase 4 — History + analytics ⬜
 

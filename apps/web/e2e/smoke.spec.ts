@@ -25,10 +25,12 @@ test.describe("public pages render", () => {
 });
 
 test.describe("auth guard", () => {
-  test("protected /today redirects anonymous users to /login", async ({ page }) => {
-    await page.goto("/today");
-    await expect(page).toHaveURL(/\/login/);
-  });
+  for (const path of ["/today", "/onboarding", "/log/00000000-0000-0000-0000-000000000000"]) {
+    test(`protected ${path} redirects anonymous users to /login`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page).toHaveURL(/\/login/);
+    });
+  }
 });
 
 test.describe("accessibility (axe-core)", () => {
