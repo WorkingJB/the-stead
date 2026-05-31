@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import path from "node:path";
+import { withSerwist } from "@serwist/turbopack";
 
 // Repo (monorepo) root, one level above apps/web's parent.
 const repoRoot = path.join(process.cwd(), "..", "..");
@@ -41,4 +42,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// Serwist (Turbopack-native) builds the service worker from app/sw.ts via the
+// route handler at app/serwist/[path]/route.ts. Keeps the Turbopack build.
+export default withSerwist(nextConfig);

@@ -62,9 +62,15 @@ Update the checkboxes in the same PR that lands the work.
 - [x] `/log/[sessionId]`: gym screen (per-set reps/weight/duration, RPE, notes); writes `set_logs`, advances enrollment pointer (or marks `complete`)
 - [x] FK id construction verified against the seeded cloud rows; e2e guards on the new protected routes
 
-**Increment B — offline + PWA ⬜ (next)**
-- [ ] Dexie offline store + ULID-keyed sync queue (last-write-wins)
-- [ ] Serwist service worker: precache shell + current program (week ±1) + movements
+**Increment B1 — installable PWA shell ✅ (this session)**
+- [x] Serwist on Turbopack (`@serwist/turbopack`): SW built from `app/sw.ts` via `app/serwist/[path]/route.ts`, registered prod-only via `SerwistProvider`
+- [x] Precache app shell + offline fallback; `defaultCache` SWR runtime caching (visited pages + content chunks work offline)
+- [x] `app/manifest.ts` (Stead palette), maskable + standard SVG icons, `app/~offline` fallback
+- [x] SW served at root scope (`Service-Worker-Allowed: /`); excluded from auth middleware; e2e covers manifest + SW registration
+
+**Increment B2 — offline writes ⬜ (next)**
+- [ ] Dexie offline store + ULID-keyed sync queue (last-write-wins); rework `/log` to write local-first
+- [ ] Precache the *current* program (week ±1) + movement library specifically
 - [ ] Install prompt on `/about` after first logged session
 - [ ] Apply `pgsodium` note encryption + nonce-based CSP (carried from Phase 2)
 
