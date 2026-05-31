@@ -1,0 +1,54 @@
+/*
+ * The Stead — design tokens.
+ * Translated from shared/design-tokens.md (the visual system extracted from the
+ * Tier 0 reference PDF). Raw palette + semantic tokens. Dark theme keeps WCAG AA
+ * contrast by lightening forest/terracotta against a warm near-black.
+ */
+
+:root {
+  /* Raw palette (light / print-faithful) */
+  --color-ink: #1a1a1a;
+  --color-forest: #2d4a35;
+  --color-terracotta: #8b5a3c;
+  --color-cream: #fbfaf4;
+  --color-hairline: #dad5c9;
+  /* Print swatch is #9a9a92 (2.7:1 on cream — fails AA). Darkened warm gray for
+     on-screen text to meet WCAG AA 4.5:1 while keeping the muted feel. */
+  --color-muted: #6b675e;
+
+  /* Semantic tokens (light theme) */
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+  --brand: var(--color-forest);
+  --on-brand: var(--color-cream);
+  --accent: var(--color-terracotta);
+  --hairline: var(--color-hairline);
+  --muted: var(--color-muted);
+
+  /* Path colors (Path A = terracotta, Path B = forest) */
+  --path-a: var(--color-terracotta);
+  --path-b: var(--color-forest);
+
+  /* Callout box: forest bg, cream text, terracotta left border */
+  --callout-bg: var(--color-forest);
+  --callout-fg: var(--color-cream);
+  --callout-border: var(--color-terracotta);
+}
+
+.dark {
+  /* Warm near-black background, cream text; accents lightened for AA contrast */
+  --background: #14130e;
+  --foreground: #f2efe6;
+  --brand: #7fb08c; /* lightened forest */
+  --on-brand: #14130e;
+  --accent: #d4986f; /* lightened terracotta */
+  --hairline: #3a382f;
+  --muted: #a7a298;
+
+  --path-a: #d4986f;
+  --path-b: #7fb08c;
+
+  --callout-bg: #1f2a22; /* deep forest, not pure black */
+  --callout-fg: #f2efe6;
+  --callout-border: #d4986f;
+}

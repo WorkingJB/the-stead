@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "../lib/design/tokens.css";
+
+/* next-themes toggles a `.dark` class on <html>; make `dark:` utilities follow it. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  /* Semantic colors → Tailwind utilities (bg-background, text-foreground, text-brand, …) */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand);
+  --color-on-brand: var(--on-brand);
+  --color-accent: var(--accent);
+  --color-hairline: var(--hairline);
+  --color-muted: var(--muted);
+  --color-path-a: var(--path-a);
+  --color-path-b: var(--path-b);
+  --color-callout: var(--callout-bg);
+  --color-callout-foreground: var(--callout-fg);
+  --color-callout-border: var(--callout-border);
+
+  /* Type families — bound to next/font CSS vars set in layout.tsx, with offline-safe fallbacks */
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-lora), Georgia, serif;
+  --font-label: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Gym-readability type scale (codified, not ad hoc) */
+  --text-prescribed: 2rem; /* 32px — prescribed-set numbers, never smaller */
+  --text-prescribed--line-height: 1.1;
+}
+
+@layer base {
+  html {
+    /* min body 18px per the gym-readability rules */
+    font-size: 18px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    line-height: 1.1;
+  }
+
+  /* Eyebrow / label treatment: Inter, uppercase, wide tracking, terracotta */
+  .eyebrow {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+}
+
+@layer components {
+  /* Minimum 48×48 tap target for interactive gym controls */
+  .tap-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}

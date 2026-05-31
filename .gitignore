@@ -9,9 +9,29 @@ env/
 output/*.pdf
 output/*.html
 
+# Node / Next.js (apps/web, packages/*)
+node_modules/
+.next/
+out/
+build/dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Env (secrets stay project-local, never committed)
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# Test artifacts
+/apps/web/playwright-report/
+/apps/web/test-results/
+/apps/web/.playwright/
+
 # OS / editor
 .DS_Store
 *.swp
 .idea/
 .vscode/
 .vercel
+supabase/.temp/
