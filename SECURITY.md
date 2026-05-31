@@ -1,8 +1,9 @@
 # Security — The Stead
 
 Security is a go-to-market differentiator for The Stead, so it is designed in from
-day one. This document is the living threat model and control inventory. It will be
-expanded in Phase 2 alongside the full RLS migrations.
+day one. This document is the living threat model and control inventory. The full
+RLS migrations landed in Phase 2 (`supabase/migrations/0001_content.sql`,
+`0002_user.sql`, `0003_rls.sql`); see [docs/ROADMAP.md](docs/ROADMAP.md) for status.
 
 ## Data we collect (PII minimization)
 
@@ -20,9 +21,9 @@ expanded in Phase 2 alongside the full RLS migrations.
 | Public env validated at load; only `NEXT_PUBLIC_*` client keys shipped | ✅ Phase 1 |
 | Baseline transport headers (nosniff, frame-deny, referrer, permissions, HSTS in prod) | ✅ Phase 1 |
 | Accessibility/contrast enforced in CI (axe-core, WCAG AA) | ✅ Phase 1 |
-| Strict nonce-based CSP (no inline scripts) | ⏳ Phase 2 |
-| RLS default-deny on every user table (`auth.uid() = user_id`) | ⏳ Phase 2 |
-| `pgsodium` per-user column encryption of free-form notes | ⏳ Phase 2 |
+| RLS default-deny on every user table (`auth.uid() = user_id`) | ✅ Phase 2 (migrations written; apply to cloud — issue #4) |
+| Strict nonce-based CSP (no inline scripts) | ⏳ Phase 3 (issue #7) |
+| `pgsodium` per-user column encryption of free-form notes | ⏳ Phase 3 (issue #7) |
 | Append-only `audit_events` for sensitive actions | ⏳ Phase 5 |
 | Right-to-delete Edge Function (cascade + revoke user) | ⏳ Phase 5 |
 

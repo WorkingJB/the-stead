@@ -31,6 +31,17 @@ jobs:
         run: npm ci
         working-directory: .
 
+      - name: Content pipeline tests
+        run: npm run content:test
+        working-directory: .
+
+      - name: Content pipeline build (no drift)
+        run: |
+          npm run content:build
+          git diff --exit-code -- apps/web/lib/content/generated supabase/seed.sql \
+            || (echo "::error::Generated content is stale. Run 'npm run content:build' and commit." && exit 1)
+        working-directory: .
+
       - name: Typecheck
         run: npm run typecheck
 

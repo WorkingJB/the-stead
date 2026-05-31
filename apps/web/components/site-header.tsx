@@ -11,7 +11,19 @@ export function SiteHeader() {
         >
           The <span className="text-brand">Stead</span>
         </Link>
-        <nav className="flex items-center gap-2">
+        <nav className="flex items-center gap-1 sm:gap-2">
+          <Link
+            href="/program"
+            className="tap-target inline-flex items-center rounded-md px-3 font-[family-name:var(--font-label)] text-sm text-foreground hover:text-brand"
+          >
+            Programs
+          </Link>
+          <Link
+            href="/movements"
+            className="tap-target hidden items-center rounded-md px-3 font-[family-name:var(--font-label)] text-sm text-foreground hover:text-brand sm:inline-flex"
+          >
+            Movements
+          </Link>
           <Link
             href="/about"
             className="tap-target inline-flex items-center rounded-md px-3 font-[family-name:var(--font-label)] text-sm text-foreground hover:text-brand"

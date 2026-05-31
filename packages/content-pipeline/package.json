@@ -1,0 +1,26 @@
+{
+  "name": "@the-stead/content-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Parses the authored content/ + data/ sources into typed JSON (offline bundle) and Supabase seed SQL.",
+  "exports": {
+    "./schema": "./src/schema.ts"
+  },
+  "types": "./src/schema.ts",
+  "scripts": {
+    "build": "tsx src/build.ts",
+    "test": "node --import tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "yaml": "^2.7.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4.19.3",
+    "typescript": "^5"
+  }
+}

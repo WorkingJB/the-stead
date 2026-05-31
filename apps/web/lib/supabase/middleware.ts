@@ -40,7 +40,9 @@ export async function updateSession(request: NextRequest) {
   // Guard authenticated-only routes. Public routes stay open.
   // Match a segment exactly or as a path prefix so "/login" is NOT caught by "/log".
   const { pathname } = request.nextUrl;
-  const protectedRoots = ["/today", "/log", "/program", "/history", "/settings", "/onboarding"];
+  // Note: /program and /movements are public browse (free-tier reads from the
+  // generated content bundle); only per-user flows stay protected.
+  const protectedRoots = ["/today", "/log", "/history", "/settings", "/onboarding"];
   const isProtected = protectedRoots.some(
     (root) => pathname === root || pathname.startsWith(`${root}/`),
   );

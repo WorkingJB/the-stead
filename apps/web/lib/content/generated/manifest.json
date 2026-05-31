@@ -1,0 +1,70 @@
+{
+  "tiers": [
+    {
+      "slug": "c1",
+      "tier": "C1",
+      "title": "The Membership",
+      "lengthWeeks": 12,
+      "paths": [
+        "A",
+        "B"
+      ],
+      "movementCount": 12
+    },
+    {
+      "slug": "c2",
+      "tier": "C2",
+      "title": "The Strength Hall",
+      "lengthWeeks": 12,
+      "paths": [
+        "A",
+        "B"
+      ],
+      "movementCount": 12
+    },
+    {
+      "slug": "tier-0",
+      "tier": "0",
+      "title": "The Foundation",
+      "lengthWeeks": 12,
+      "paths": [
+        "A",
+        "B"
+      ],
+      "movementCount": 12
+    },
+    {
+      "slug": "tier-1",
+      "tier": "1",
+      "title": "The Standard Home",
+      "lengthWeeks": 12,
+      "paths": [
+        "A",
+        "B"
+      ],
+      "movementCount": 12
+    },
+    {
+      "slug": "tier-2",
+      "tier": "2",
+      "title": "The Expanded Home",
+      "lengthWeeks": 12,
+      "paths": [
+        "A",
+        "B"
+      ],
+      "movementCount": 12
+    },
+    {
+      "slug": "tier-3",
+      "tier": "3",
+      "title": "The Real Garage",
+      "lengthWeeks": 12,
+      "paths": [
+        "A",
+        "B"
+      ],
+      "movementCount": 12
+    }
+  ]
+}
