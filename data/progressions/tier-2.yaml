@@ -1,0 +1,1085 @@
+# The Stead - Tier 2 (The Expanded Home) - weekly prescriptions
+#
+# This is the tabular programming data. Prose (week intros, coaching voice,
+# movement descriptions) lives in content/tier-2/. Each week here drives TWO
+# rendered pages: the portrait week-summary and the landscape week-tracker.
+#
+# Schema (identical to tier-0.yaml / tier-1.yaml):
+#   weeks[].week              week number 1-12
+#   weeks[].days[].day        day number 1-5 (Day 6 mobility / Day 7 rest are program-wide)
+#   weeks[].days[].title      session title as printed
+#   weeks[].days[].kind       strength | cardio | tempo | intervals | long
+#   weeks[].days[].duration   duration label as printed
+#   weeks[].days[].note       the per-day NOTE line (coaching cue tied to the prescription)
+#   weeks[].days[].prescriptions.A / .B   ordered "movement: sets x reps" lines per Path
+#
+# Tier 2 equipment: two matched kettlebells, gymnastics rings, a sandbag, a jump
+# rope, a plyo box (plus the Tier 1 kit: doorway bar, weight vest, real shoes).
+# Strength is double-bell, ring, and sandbag based; the Day 5 keystone is a
+# loaded ruck.
+#
+# Style: colon between movement and prescription; "x" rendered as the multiplication sign.
+# No em dashes anywhere (see shared/style-rules.md).
+
+tier: 2
+title: The Expanded Home
+paths: [A, B]
+
+# Program-wide footer printed on every week-summary page:
+optional_days: "Day 6 · 15-20 min mobility, optional · Day 7 · rest"
+
+blocks:
+  - number: 1
+    name: The Engine
+    weeks: [1, 2, 3, 4]
+  - number: 2
+    name: The Build
+    weeks: [5, 6, 7, 8]
+  - number: 3
+    name: Integration
+    weeks: [9, 10, 11, 12]
+
+weeks:
+  - week: 1
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Make the double clean to the rack automatic before chasing reps. Leave 2-3 reps in reserve on every set. Target RPE 6."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "KB goblet squat: 3 × 10-12"
+            - "Double KB strict press: 3 × 6-8"
+            - "Ring pushup: 3 × 8-10"
+            - "Plank: 3 × 30 sec"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 3 × 8-10"
+            - "Double KB push press: 3 × 6-8"
+            - "Ring dip: 3 × 6-8"
+            - "Ring fallout: 3 × 6-8"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "40-45 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "40 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "45 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "The rings will feel shaky at first; that settles fast. Full range; controlled tempo. Target RPE 6."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup, or band-assisted: 3 × 4-6"
+            - "KB swing, two-hand: 3 × 12-15"
+            - "KB single-leg Romanian deadlift: 3 × 8 each side"
+            - "Bird dog: 3 × 6 ea side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 3 × 4-6"
+            - "KB swing, single-arm: 3 × 10 each side"
+            - "Sandbag clean: 3 × 6-8"
+            - "Side plank: 3 × 30s each side"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "40-45 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "40 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "45 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "60-75 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "60 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 20 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "75 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 25 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 2
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Leave 2-3 reps in reserve on every set. Target RPE 6-7. Stop the set if form breaks."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "KB goblet squat: 3 × 12-15"
+            - "Double KB strict press: 3 × 8"
+            - "Ring pushup: 3 × 10-12"
+            - "Plank: 3 × 40 sec"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 3 × 10-12"
+            - "Double KB push press: 3 × 8"
+            - "Ring dip: 3 × 8"
+            - "Ring fallout: 3 × 8"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "45-50 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "45 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "50 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Full range; controlled tempo. Target RPE 6-7. The sandbag clean rewards a flat back, not a heave."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup, or band-assisted: 3 × 5-6"
+            - "KB swing, two-hand: 3 × 15"
+            - "KB single-leg Romanian deadlift: 3 × 8 each side"
+            - "Bird dog: 3 × 8 ea side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 3 × 5-6"
+            - "KB swing, single-arm: 3 × 12 each side"
+            - "Sandbag clean: 3 × 8"
+            - "Side plank: 3 × 35s each side"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "45-50 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "45 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "50 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "70-85 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "70 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 20 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "85 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 25 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 3
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Peak week of the block. Leave 2-3 reps in reserve on every set. Target RPE 7-8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "KB goblet squat: 4 × 12-15"
+            - "Double KB strict press: 4 × 8"
+            - "Ring pushup: 4 × 10-12"
+            - "Plank: 4 × 45 sec"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 10-12"
+            - "Double KB push press: 4 × 8"
+            - "Ring dip: 4 × 8-10"
+            - "Ring fallout: 4 × 8-10"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "50-55 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "50 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "55 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Peak week of the block. Full range; controlled tempo. Target RPE 7-8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup, or band-assisted: 4 × 5-6"
+            - "KB swing, two-hand: 4 × 15-20"
+            - "KB single-leg Romanian deadlift: 4 × 8 each side"
+            - "Bird dog: 4 × 8 ea side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 4 × 5-6"
+            - "KB swing, single-arm: 4 × 12 each side"
+            - "Sandbag clean: 4 × 8"
+            - "Side plank: 4 × 40s each side"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "50-55 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "50 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "55 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "85-100 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "85 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 25 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "100 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 4
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 40 MIN"
+        note: "Deload week. Two sets, easy effort. Move well; do not chase fatigue."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "KB goblet squat: 2 × 12"
+            - "Double KB strict press: 2 × 6"
+            - "Ring pushup: 2 × 8-10"
+            - "Plank: 2 × 25 sec"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 2 × 10"
+            - "Double KB push press: 2 × 6"
+            - "Ring dip: 2 × 6"
+            - "Ring fallout: 2 × 6"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "30-35 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "30 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "35 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 40 MIN"
+        note: "Deload week. Lower volume; full range of motion the priority."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup, or band-assisted: 2 × 4"
+            - "KB swing, two-hand: 2 × 12"
+            - "KB single-leg Romanian deadlift: 2 × 6 each side"
+            - "Bird dog: 2 × 6 ea side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 2 × 4"
+            - "KB swing, single-arm: 2 × 10 each side"
+            - "Sandbag clean: 2 × 6"
+            - "Side plank: 2 × 20s each side"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "30-35 MIN"
+        note: "Block 1 has no interval days. Every cardio session this week is Zone 2."
+        prescriptions:
+          A:
+            - "30 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "35 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "50-60 MIN"
+        note: "Deload ruck. Roughly half the load and duration of week 3; same conversational pace."
+        prescriptions:
+          A:
+            - "50 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 15 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "60 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 20 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 5
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "The double front squat takes over for Path A now. Leave 2-3 reps in reserve. Target RPE 7."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 3 × 8-10"
+            - "Double KB strict press: 3 × 8"
+            - "Ring pushup: 3 × 12-15"
+            - "Plank: 3 × 40 sec"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 10"
+            - "Double KB push press: 4 × 8"
+            - "Ring dip, 2s pause at bottom: 4 × 8"
+            - "Ring fallout: 4 × 8"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "45-55 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "45 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "55 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "The ring row joins the pull day. Full range; controlled tempo. Target RPE 7."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup: 3 × 5-6"
+            - "KB swing, two-hand: 3 × 15-20"
+            - "KB single-leg Romanian deadlift: 3 × 8 each side"
+            - "Ring row: 3 × 10-12"
+            - "Side plank: 3 × 30s each side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 4 × 5-6"
+            - "KB swing, single-arm: 4 × 12 each side"
+            - "Sandbag over-shoulder: 4 × 6, alternating sides"
+            - "Ring row, feet elevated: 4 × 8-10"
+            - "Hanging leg raise: 4 × 8"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "Tempo / Threshold"
+        kind: tempo
+        duration: "25-30 MIN"
+        note: "Tempo work sits at the edge of conversational pace. You can speak in short phrases but not full sentences. Hold it; don't push past it."
+        prescriptions:
+          A:
+            - "25 min session, 5 min easy warmup:"
+            - "Then 2 × 6 min brisk uphill walking or steady jump rope"
+            - "(2 min easy walk between segments)"
+            - "5 min easy cooldown"
+          B:
+            - "30 min run with intervals:"
+            - "10 min easy warmup, then 2 × 6 min at comfortably hard tempo pace"
+            - "(2 min easy jog between segments)"
+            - "5-10 min easy cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "75-90 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "75 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 25 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "90 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 6
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Leave 2-3 reps in reserve on every set. Target RPE 7-8. Stop the set if form breaks."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 8-10"
+            - "Double KB strict press: 4 × 8"
+            - "Ring pushup: 4 × 12"
+            - "Plank: 4 × 45 sec"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 10-12"
+            - "Double KB push press: 4 × 8-10"
+            - "Ring dip, 2s pause at bottom: 4 × 8-10"
+            - "Ring fallout: 4 × 10"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "50-60 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "50 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "60 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Full range; controlled tempo. Target RPE 7-8. Keep the back flat as the sandbag fatigues you."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup: 4 × 5-6"
+            - "KB swing, two-hand: 4 × 20"
+            - "KB single-leg Romanian deadlift: 4 × 8 each side"
+            - "Ring row: 4 × 10-12"
+            - "Side plank: 4 × 35s each side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 4 × 6"
+            - "KB swing, single-arm: 4 × 12-15 each side"
+            - "Sandbag over-shoulder: 4 × 8, alternating sides"
+            - "Ring row, feet elevated: 4 × 10"
+            - "Hanging leg raise: 4 × 10"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "Tempo / Threshold"
+        kind: tempo
+        duration: "30-35 MIN"
+        note: "Tempo work sits at the edge of conversational pace. You can speak in short phrases but not full sentences. Hold it; don't push past it."
+        prescriptions:
+          A:
+            - "30 min session, 5 min easy warmup:"
+            - "Then 3 × 6 min brisk uphill walking or steady jump rope"
+            - "(2 min easy walk between segments)"
+            - "5 min easy cooldown"
+          B:
+            - "35 min run with intervals:"
+            - "10 min easy warmup, then 3 × 6 min at comfortably hard tempo pace"
+            - "(2 min easy jog between segments)"
+            - "5-10 min easy cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "90-105 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "90 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "105 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 7
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Peak week of the block. Leave 2-3 reps in reserve. Target RPE 8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 10"
+            - "Double KB strict press: 4 × 8-10"
+            - "Ring pushup: 4 × 12-15"
+            - "Plank: 4 × 50 sec"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 12"
+            - "Double KB push press: 4 × 10"
+            - "Ring dip: 4 × 10"
+            - "Ring fallout: 4 × 10-12"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "55-65 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "55 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "65 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Peak week of the block. Full range; controlled tempo. Target RPE 8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup: 4 × 6"
+            - "KB swing, two-hand: 4 × 20"
+            - "KB single-leg Romanian deadlift: 4 × 8-10 each side"
+            - "Ring row: 4 × 12"
+            - "Side plank: 4 × 40s each side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 4 × 6-8"
+            - "KB swing, single-arm: 4 × 15 each side"
+            - "Sandbag over-shoulder: 4 × 8, alternating sides"
+            - "Ring row, feet elevated: 4 × 10-12"
+            - "Hanging leg raise: 4 × 10-12"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "Tempo / Threshold"
+        kind: tempo
+        duration: "35-40 MIN"
+        note: "Tempo work sits at the edge of conversational pace. You can speak in short phrases but not full sentences. Hold it; don't push past it."
+        prescriptions:
+          A:
+            - "35 min session, 5 min easy warmup:"
+            - "Then 2 × 10 min brisk uphill walking or steady jump rope"
+            - "(2 min easy walk between segments)"
+            - "5 min easy cooldown"
+          B:
+            - "40 min run with intervals:"
+            - "10 min easy warmup, then 2 × 10 min at comfortably hard tempo pace"
+            - "(2 min easy jog between segments)"
+            - "5-10 min easy cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "105-120 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "105 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "120 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 8
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 40 MIN"
+        note: "Deload week. Two-to-three sets, RPE 5. Same patterns, lower volume."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 2 × 8"
+            - "Double KB strict press: 2 × 6"
+            - "Ring pushup: 2 × 10"
+            - "Plank: 2 × 30 sec"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 3 × 8"
+            - "Double KB push press: 3 × 6"
+            - "Ring dip: 3 × 6"
+            - "Ring fallout: 2 × 8"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "35-45 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "35 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "45 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 40 MIN"
+        note: "Deload. Lower volume; full range of motion the priority."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup, or band-assisted: 2 × 4"
+            - "KB swing, two-hand: 2 × 12"
+            - "KB single-leg Romanian deadlift: 2 × 6 each side"
+            - "Ring row: 2 × 10"
+            - "Side plank: 2 × 20s each side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 3 × 4"
+            - "KB swing, single-arm: 3 × 10 each side"
+            - "Sandbag clean: 2 × 6"
+            - "Ring row, feet elevated: 3 × 8"
+            - "Hanging leg raise: 2 × 8"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "Light Tempo (Deload)"
+        kind: tempo
+        duration: "20-25 MIN"
+        note: "Deload tempo. Touch the higher zone briefly; don't dig in."
+        prescriptions:
+          A:
+            - "20 min walk: 5 min easy, 5 min brisker, 5 min easy, 5 min brisker"
+            - "Stay below the point of breathlessness throughout"
+          B:
+            - "25 min run: 5 min easy, 10 min comfortably brisk, 10 min easy"
+            - "Keep RPE under 7 the whole session"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "55-70 MIN"
+        note: "Deload ruck. Easy effort. The load stays light."
+        prescriptions:
+          A:
+            - "55 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 20 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "70 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 25 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 9
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Leave 2-3 reps in reserve on every set. Target RPE 7-8. Stop the set if form breaks."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 10"
+            - "Double KB strict press: 4 × 8"
+            - "Ring dip, feet-assisted, or vested ring pushup: 4 × 8-10"
+            - "Ring fallout: 4 × 6-8"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 12"
+            - "Double KB push press: 4 × 10"
+            - "Weighted ring dip: 4 × 5-6"
+            - "Ring fallout: 4 × 10"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "50-60 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "50 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "60 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Weighted pullups and the get-up enter for Path B. Full range; controlled tempo. Target RPE 7-8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup, or weighted +10 lb: 4 × 5"
+            - "KB swing, two-hand, heavy intent: 4 × 15-20"
+            - "Sandbag clean: 4 × 6-8"
+            - "Ring row: 4 × 10-12"
+            - "Side plank: 4 × 40s each side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 4 × 6"
+            - "Double KB swing: 4 × 12-15"
+            - "Turkish get-up: 4 × 2 each side"
+            - "Ring row, feet elevated: 4 × 10"
+            - "Side plank: 4 × 50s each side"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "High-Intensity Intervals"
+        kind: intervals
+        duration: "30-40 MIN"
+        note: "This is the only true hard session of the week. RPE 8-9 in the work intervals. If you cannot recover between segments, the prior intervals were too hard."
+        prescriptions:
+          A:
+            - "5 min easy walk warmup"
+            - "4 rounds: 60 sec hard uphill walk or fast jump rope, then 5 box step-ups"
+            - "(90 sec easy walking recovery between rounds)"
+            - "5 min easy walk cooldown"
+          B:
+            - "10 min easy run warmup"
+            - "Intervals: 4 × 60 sec at 85-90% effort (4x4, hill repeats, or fast jump rope)"
+            - "Finish each work segment with 3 crisp box jumps, step down"
+            - "(equal-duration easy jog recovery between); 5-10 min cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "90-105 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "90 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "105 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 10
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Leave 2-3 reps in reserve on every set. Target RPE 8. Stop the set if form breaks."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 10-12"
+            - "Double KB strict press: 4 × 8-10"
+            - "Ring dip, feet-assisted, or vested ring pushup: 4 × 10"
+            - "Ring fallout: 4 × 8"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat, 3s descent: 4 × 12"
+            - "Double KB push press: 4 × 10-12"
+            - "Weighted ring dip: 4 × 6"
+            - "Ring fallout: 4 × 10-12"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "55-65 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "55 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "65 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "The bar and the rings are loaded now. Full range; controlled tempo. Target RPE 8."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (+10 lb): 4 × 5"
+            - "KB swing, two-hand, heavy intent: 4 × 20"
+            - "Sandbag clean: 4 × 8"
+            - "Ring row: 4 × 12"
+            - "Side plank: 4 × 45s each side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 4 × 6"
+            - "Double KB swing: 4 × 15"
+            - "Turkish get-up: 4 × 2 each side"
+            - "Ring row, feet elevated: 4 × 10-12"
+            - "Side plank: 4 × 55s each side"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "High-Intensity Intervals"
+        kind: intervals
+        duration: "30-40 MIN"
+        note: "This is the only true hard session of the week. RPE 8-9 in the work intervals. If you cannot recover between segments, the prior intervals were too hard."
+        prescriptions:
+          A:
+            - "5 min easy walk warmup"
+            - "5 rounds: 90 sec hard uphill walk or fast jump rope, then 5 box step-ups"
+            - "(90 sec easy walking recovery between rounds)"
+            - "5 min easy walk cooldown"
+          B:
+            - "10 min easy run warmup"
+            - "Intervals: 5 × 90 sec at 85-90% effort (4x4, hill repeats, or double-unders)"
+            - "Finish each work segment with 3 crisp box jumps, step down"
+            - "(equal-duration easy jog recovery between); 5-10 min cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "105-120 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "105 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "120 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 11
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Peak week of the program. Leave 2-3 reps in reserve. Target RPE 8-9."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 12"
+            - "Double KB strict press: 4 × 10"
+            - "Vested ring pushup, or ring dip: 4 × 10-12"
+            - "Ring fallout: 4 × 8-10"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 4 × 12-15"
+            - "Double KB push press: 4 × 12"
+            - "Weighted ring dip: 4 × 6-8"
+            - "Ring fallout: 4 × 12"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "60-70 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "60 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "70 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 45 MIN"
+        note: "Peak week of the program. Full range; controlled tempo. Target RPE 8-9."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (+15 lb): 4 × 5"
+            - "KB swing, two-hand, heavy intent: 4 × 20-25"
+            - "Sandbag clean: 4 × 8-10"
+            - "Ring row: 4 × 12-15"
+            - "Side plank: 4 × 50s each side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 4 × 6-8"
+            - "Double KB swing: 4 × 15-20"
+            - "Turkish get-up: 4 × 3 each side"
+            - "Ring row, feet elevated: 4 × 12"
+            - "Side plank: 4 × 60s each side"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "High-Intensity Intervals"
+        kind: intervals
+        duration: "35-40 MIN"
+        note: "This is the only true hard session of the week. RPE 8-9 in the work intervals. If you cannot recover between segments, the prior intervals were too hard."
+        prescriptions:
+          A:
+            - "5 min easy walk warmup"
+            - "6 rounds: 90 sec hard uphill walk or fast jump rope, then 5 box step-ups"
+            - "(90 sec easy walking recovery between rounds)"
+            - "5 min easy walk cooldown"
+          B:
+            - "10 min easy run warmup"
+            - "Intervals: 6 × 90 sec at 85-90% effort (4x4, hill repeats, or double-unders)"
+            - "Finish each work segment with 3 crisp box jumps, step down"
+            - "(equal-duration easy jog recovery between); 5-10 min cooldown"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "130-150 MIN"
+        note: "If you only do one session this week, do this one. The loaded ruck is the keystone of the entire program."
+        prescriptions:
+          A:
+            - "130 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 35 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "150 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 40 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+
+  - week: 12
+    days:
+      - day: 1
+        title: "Strength A · Push + Squat"
+        kind: strength
+        duration: "≈ 40 MIN"
+        note: "Final deload + assessment. Two-to-three sets, RPE 5. See assessment page after week 12."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 2 × 10"
+            - "Double KB strict press: 2 × 6"
+            - "Ring pushup: 2 × 10"
+            - "Plank: 2 × 30 sec"
+            - "Cooldown: 3 min walking, slow breath"
+          B:
+            - "Warmup: 5 min easy movement, joint circles, double-clean practice"
+            - "Double KB front squat: 3 × 10"
+            - "Double KB push press: 3 × 8"
+            - "Ring dip: 3 × 6"
+            - "Ring fallout: 3 × 8"
+            - "Cooldown: 3 min walking, slow breath"
+      - day: 2
+        title: "Zone 2 Cardio"
+        kind: cardio
+        duration: "40-50 MIN"
+        note: "Easy day stays easy. Save the hard work for Day 4."
+        prescriptions:
+          A:
+            - "40 min brisk walking or easy jog, flat to gently rolling terrain"
+            - "Nasal breathing the entire session"
+            - "If your breath breaks the nose seal, slow until it returns"
+          B:
+            - "50 min easy jog, conversational pace"
+            - "Nasal breathing if able; talk test otherwise"
+            - "If you cannot speak in full sentences, slow down"
+      - day: 3
+        title: "Strength B · Pull + Hinge"
+        kind: strength
+        duration: "≈ 40 MIN"
+        note: "Final deload. Easy volume to feel the patterns one more time."
+        prescriptions:
+          A:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Strict pullup, or band-assisted: 2 × 4"
+            - "KB swing, two-hand: 2 × 12"
+            - "KB single-leg Romanian deadlift: 2 × 6 each side"
+            - "Ring row: 2 × 10"
+            - "Side plank: 2 × 20s each side"
+            - "Cooldown: 3 min walking"
+          B:
+            - "Warmup: 5 min easy movement, scapular hangs"
+            - "Weighted pullup (vest): 3 × 4"
+            - "Double KB swing: 3 × 12"
+            - "Turkish get-up: 3 × 2 each side"
+            - "Ring row, feet elevated: 3 × 8"
+            - "Side plank: 3 × 30s each side"
+            - "Cooldown: 3 min walking"
+      - day: 4
+        title: "Easy Intervals (Deload)"
+        kind: intervals
+        duration: "25 MIN"
+        note: "Deload week of the program. After this comes assessment and Tier 3 candidacy."
+        prescriptions:
+          A:
+            - "20 min walk with 4 × 30 sec brisker pace or light jump rope"
+            - "(2 min easy walk between)"
+          B:
+            - "25 min run with 4 × 45 sec at 80% effort"
+            - "(2 min easy jog between)"
+      - day: 5
+        title: "Long Ruck"
+        kind: long
+        duration: "70-85 MIN"
+        note: "Final long session of the program. Choose a route you love."
+        prescriptions:
+          A:
+            - "70 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 25 lb"
+            - "Choose a route you enjoy. This is the keystone session"
+          B:
+            - "85 min continuous ruck, conversational pace"
+            - "Weight vest or pack at 30 lb"
+            - "Choose a route you enjoy. This is the keystone session"

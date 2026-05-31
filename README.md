@@ -11,9 +11,11 @@ Each tier is a separate ~45-page program with the same structure and voice.
 | Tier 0 | The Foundation | Bodyweight only (built, reference implementation) |
 | Tier 1 | Standard Home | Doorway pullup bar, one heavy KB, weight vest, real shoes |
 | Tier 2 | Expanded Home | Second KB, rings, sandbag, jump rope, plyo box |
-| Tier 3 | Real Garage | Cardio machine, dumbbell range, full KB progression |
-| C1 | Commercial (basic) | Basic big-box gym |
-| C2 | Commercial (serious) | Serious strength gym or CrossFit affiliate |
+| Tier 3 | Real Garage | Barbell + rack, cardio machine, dumbbell range, full KB progression |
+| C1 | The Membership | Basic big-box gym: machines, dumbbells, cables, cardio floor |
+| C2 | The Strength Hall | Serious strength gym or CrossFit affiliate: barbells, platforms, GHD, sleds |
+
+All six programs are authored. The home path (`content/tier-0` .. `content/tier-3`) and the commercial tiers (`content/c1`, `content/c2`) all share one structure, voice, and page contract.
 
 ## Repo layout
 
@@ -26,9 +28,11 @@ content/         Prose, one Markdown file per page. Front-matter = structured fi
     programming/         program overview + 3 block intros
     weeks/               week-01.md .. week-12.md  (intro prose + per-page metadata)
     back-matter/         assessment, what's next, glossary, closing
+  c1/, c2/               commercial tiers, same page set as the tier-N dirs
 data/
   progressions/
     tier-0.yaml          the 12-week prescriptions (sets x reps, durations, pack weight) per Path
+    tier-1.yaml .. tier-3.yaml, c1.yaml, c2.yaml   one per program, identical schema
 shared/                  cross-tier reference, reused by every tier
   voice-guide.md
   style-rules.md
@@ -46,7 +50,7 @@ A single week produces **two pages** (a portrait summary and a landscape tracker
 
 ## Status
 
-Tier 0 (reference) and Tier 1 (The Standard Home) are fully authored against the shared structure. The Markdown -> PDF render pipeline is **not yet built** (deferred by decision; see `CHANGES.md`). Read `CHANGES.md` first when picking this up.
+All six programs are authored against the shared structure: the home path (Tier 0 reference, Tier 1 Standard Home, Tier 2 Expanded Home, Tier 3 Real Garage) and the commercial tiers (C1 The Membership, C2 The Strength Hall). The Markdown -> PDF render pipeline is **not yet built** (deferred by decision; see `CHANGES.md`). Read `CHANGES.md` first when picking this up.
 
 ## Setup
 
