@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { loadAboutSections } from "@/lib/content/about";
 import { TwoToneHeading } from "@/components/two-tone-heading";
 import { Markdown } from "@/components/markdown";
+import { InstallPrompt } from "@/components/install-prompt";
 
 export const metadata: Metadata = {
   title: "About",
@@ -40,6 +41,7 @@ export default async function AboutPage() {
           </section>
         ))}
       </div>
+      <InstallPrompt />
     </article>
   );
 }

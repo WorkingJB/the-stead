@@ -4,6 +4,7 @@ import { SerwistProvider } from "@serwist/turbopack/react";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
+import { OfflineSync } from "@/components/offline-sync";
 
 // Register the service worker in production builds only — in dev a SW fights
 // with HMR and can serve stale chunks.
@@ -70,6 +71,7 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <SiteHeader />
             <main className="flex flex-1 flex-col">{children}</main>
+            <OfflineSync />
           </ThemeProvider>
         </SerwistProvider>
       </body>

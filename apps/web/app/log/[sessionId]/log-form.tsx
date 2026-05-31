@@ -1,8 +1,18 @@
 "use client";
 
-import { useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import type { PrescribedItem } from "@the-stead/content-pipeline/schema";
-import { finishSession } from "./actions";
+import {
+  clearLocal,
+  enqueue,
+  loadDraft,
+  saveDraft,
+  type DraftState,
+  type SetDraft,
+} from "@/lib/offline/db";
+import { HAS_LOGGED_KEY } from "@/lib/offline/flags";
+import { syncSession, type FinishPayload } from "./actions";
 
 type InputKind = "reps" | "duration" | "distance";
 
@@ -17,18 +27,10 @@ interface ExistingLog {
   completed: boolean;
 }
 
-interface SetRow {
-  reps: string;
-  weight: string;
-  durationSec: string;
-  distanceM: string;
-  completed: boolean;
-}
-
 interface Group {
   item: PrescribedItem;
   kind: InputKind;
-  sets: SetRow[];
+  sets: SetDraft[];
 }
 
 function inputKind(item: PrescribedItem): InputKind {
@@ -61,6 +63,10 @@ export function LogForm({
   initialNotes: string | null;
   initialBodyWeight: number | null;
 }) {
+  const router = useRouter();
+
+  // Seed from the server-provided logs (and prescription defaults). The Dexie
+  // draft, if any, is layered on top after mount — local edits win.
   const initial = useMemo<Group[]>(() => {
     const byKey = new Map<string, ExistingLog>();
     for (const e of existing) {
@@ -71,7 +77,7 @@ export function LogForm({
       .map((item) => {
         const kind = inputKind(item);
         const count = item.sets ?? 1;
-        const sets: SetRow[] = Array.from({ length: count }, (_, i) => {
+        const sets: SetDraft[] = Array.from({ length: count }, (_, i) => {
           const e = byKey.get(`${programDayId}-${item.orderIdx}-${i}`);
           const defReps = kind === "reps" ? (item.repHigh ?? item.repLow ?? "") : "";
           const defDur = kind === "duration" ? (item.durationSec ?? "") : "";
@@ -99,11 +105,59 @@ export function LogForm({
   const [bodyWeight, setBodyWeight] = useState<string>(
     initialBodyWeight ? String(initialBodyWeight) : "",
   );
-  const [pending, startTransition] = useTransition();
+  const [submitting, setSubmitting] = useState(false);
+  const hydrated = useRef(false);
 
   const noteItems = items.filter((it) => it.kind === "note");
 
-  function update(gi: number, si: number, patch: Partial<SetRow>) {
+  const draftState = (): DraftState => ({
+    sets: Object.fromEntries(groups.map((g) => [g.item.orderIdx, g.sets])),
+    weightUnit,
+    rpe,
+    notes,
+    bodyWeight,
+  });
+
+  // Hydrate from any locally-saved draft (resuming, possibly offline).
+  useEffect(() => {
+    let cancelled = false;
+    loadDraft(sessionId)
+      .then((draft) => {
+        if (cancelled) return;
+        if (draft) {
+          setGroups((prev) =>
+            prev.map((g) => {
+              const saved = draft.state.sets[g.item.orderIdx];
+              return saved ? { ...g, sets: saved } : g;
+            }),
+          );
+          setWeightUnit(draft.state.weightUnit);
+          setRpe(draft.state.rpe);
+          setNotes(draft.state.notes);
+          setBodyWeight(draft.state.bodyWeight);
+        }
+      })
+      .finally(() => {
+        hydrated.current = true;
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [sessionId]);
+
+  // Debounced autosave — every edit is persisted locally, so losing signal or
+  // closing the tab mid-workout never loses data.
+  useEffect(() => {
+    if (!hydrated.current) return;
+    const snapshot = draftState();
+    const t = setTimeout(() => {
+      void saveDraft(sessionId, snapshot);
+    }, 500);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [groups, weightUnit, rpe, notes, bodyWeight, sessionId]);
+
+  function update(gi: number, si: number, patch: Partial<SetDraft>) {
     setGroups((prev) =>
       prev.map((g, i) =>
         i === gi
@@ -113,7 +167,10 @@ export function LogForm({
     );
   }
 
-  function onFinish() {
+  async function onFinish() {
+    if (submitting) return;
+    setSubmitting(true);
+
     const sets = groups.flatMap((g) =>
       g.sets.map((row, si) => ({
         orderIdx: g.item.orderIdx,
@@ -126,15 +183,41 @@ export function LogForm({
         completed: row.completed,
       })),
     );
-    const payload = {
+    const payload: FinishPayload = {
       rpe: num(rpe),
       notes: notes.trim() ? notes.trim() : null,
       bodyWeight: num(bodyWeight),
       sets,
     };
-    startTransition(() => {
-      void finishSession(sessionId, payload);
-    });
+
+    try {
+      // Local-first: queue the finish, then try to sync immediately.
+      await saveDraft(sessionId, draftState());
+      await enqueue(sessionId, payload);
+      try {
+        localStorage.setItem(HAS_LOGGED_KEY, "1");
+      } catch {
+        // private mode / storage disabled — non-fatal
+      }
+
+      let ok = false;
+      if (typeof navigator === "undefined" || navigator.onLine) {
+        try {
+          ok = (await syncSession(sessionId, payload)).ok;
+        } catch {
+          ok = false; // offline / network error → stays queued
+        }
+      }
+
+      if (ok) {
+        await clearLocal(sessionId);
+        router.replace("/today?logged=1");
+      } else {
+        router.replace("/today?offline=1");
+      }
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -298,11 +381,14 @@ export function LogForm({
         <button
           type="button"
           onClick={onFinish}
-          disabled={pending}
+          disabled={submitting}
           className="tap-target inline-flex w-full items-center justify-center rounded-md bg-brand px-8 text-lg font-semibold text-on-brand hover:opacity-90 disabled:opacity-60"
         >
-          {pending ? "Saving…" : "Finish session"}
+          {submitting ? "Saving…" : "Finish session"}
         </button>
+        <p className="mt-2 text-center font-[family-name:var(--font-label)] text-xs text-muted">
+          Saved on this device as you go — syncs when you&apos;re online.
+        </p>
       </div>
     </div>
   );

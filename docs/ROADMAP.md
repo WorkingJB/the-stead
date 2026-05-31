@@ -68,11 +68,17 @@ Update the checkboxes in the same PR that lands the work.
 - [x] `app/manifest.ts` (Stead palette), maskable + standard SVG icons, `app/~offline` fallback
 - [x] SW served at root scope (`Service-Worker-Allowed: /`); excluded from auth middleware; e2e covers manifest + SW registration
 
-**Increment B2 — offline writes ⬜ (next)**
-- [ ] Dexie offline store + ULID-keyed sync queue (last-write-wins); rework `/log` to write local-first
-- [ ] Precache the *current* program (week ±1) + movement library specifically
-- [ ] Install prompt on `/about` after first logged session
-- [ ] Apply `pgsodium` note encryption + nonce-based CSP (carried from Phase 2)
+**Increment B2 — offline writes 🟡 (this session)**
+- [x] Dexie offline store (`lib/offline/db.ts`): drafts + outbox, lazy/SSR-safe
+- [x] `/log` is local-first: hydrates from the draft, debounced autosave on every edit, Finish queues then syncs
+- [x] Non-redirecting idempotent `syncSession`; background flush (`components/offline-sync`) on load + `online` event
+- [x] Install prompt on `/about` after the first logged session (`beforeinstallprompt`)
+- [ ] Precache the *current* program (week ±1) specifically (rely on SWR runtime cache for now)
+- [ ] Apply `pgsodium` note encryption + nonce-based CSP (carried from Phase 2, issue #7)
+
+> Live offline-write round-trip (log offline → reopen → sync on reconnect) is an
+> auth-gated device test — rides with issue #5. ULIDs aren't needed yet because
+> sessions are started online; revisit if offline session *creation* is added.
 
 > Note: the authenticated write path's live round-trip (sign in → onboard → log →
 > rows in Supabase) is verified on a real device per the cloud-only constraint —

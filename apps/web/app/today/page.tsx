@@ -17,7 +17,7 @@ export const metadata: Metadata = { title: "Today" };
 export default async function TodayPage({
   searchParams,
 }: {
-  searchParams: Promise<{ logged?: string }>;
+  searchParams: Promise<{ logged?: string; offline?: string }>;
 }) {
   const supabase = await createClient();
   const {
@@ -25,7 +25,7 @@ export default async function TodayPage({
   } = await supabase.auth.getUser();
   if (!user) redirect("/login?redirectTo=/today");
 
-  const { logged } = await searchParams;
+  const { logged, offline } = await searchParams;
 
   const enrollment = await getActiveEnrollment(supabase, user.id);
   if (!enrollment) redirect("/onboarding");
@@ -62,6 +62,14 @@ export default async function TodayPage({
           className="mt-6 rounded-md border border-brand bg-callout px-4 py-3 font-[family-name:var(--font-label)] text-sm text-callout-foreground"
         >
           Session logged. On to the next one.
+        </p>
+      ) : null}
+      {offline ? (
+        <p
+          role="status"
+          className="mt-6 rounded-md border border-hairline bg-callout px-4 py-3 font-[family-name:var(--font-label)] text-sm text-callout-foreground"
+        >
+          Saved on your device. It&apos;ll sync to your account once you&apos;re back online.
         </p>
       ) : null}
 

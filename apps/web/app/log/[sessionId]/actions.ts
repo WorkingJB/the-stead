@@ -1,6 +1,5 @@
 "use server";
 
-import { redirect } from "next/navigation";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { parseProgramDayId } from "@/lib/data/sessions";
@@ -25,15 +24,26 @@ const payloadSchema = z.object({
   sets: z.array(setSchema).max(200),
 });
 
-export async function finishSession(sessionId: string, raw: unknown) {
+export type FinishPayload = z.infer<typeof payloadSchema>;
+
+/**
+ * Finalize a session: replace its set logs, stamp the session, and advance the
+ * enrollment pointer. Returns a result instead of redirecting so it can be
+ * called both from the gym screen (happy path) and from the background sync
+ * flush. Idempotent: safe to replay an already-applied finish.
+ */
+export async function syncSession(
+  sessionId: string,
+  raw: unknown,
+): Promise<{ ok: boolean }> {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) redirect("/login?redirectTo=/today");
+  if (!user) return { ok: false };
 
   const parsed = payloadSchema.safeParse(raw);
-  if (!parsed.success) redirect(`/log/${sessionId}?error=invalid`);
+  if (!parsed.success) return { ok: false };
   const { rpe, notes, bodyWeight, sets } = parsed.data;
 
   // Ownership enforced by RLS; also gives us the day + enrollment.
@@ -42,7 +52,7 @@ export async function finishSession(sessionId: string, raw: unknown) {
     .select("id, enrollment_id, program_day_id")
     .eq("id", sessionId)
     .maybeSingle();
-  if (!session || !session.program_day_id) redirect("/today");
+  if (!session || !session.program_day_id) return { ok: false };
 
   const dayId = session.program_day_id;
   const parsedDay = parseProgramDayId(dayId);
@@ -117,5 +127,5 @@ export async function finishSession(sessionId: string, raw: unknown) {
     }
   }
 
-  redirect("/today?logged=1");
+  return { ok: true };
 }
